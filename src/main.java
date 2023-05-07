@@ -169,6 +169,7 @@ public class main extends javax.swing.JFrame {
             File folder = new File("BarcodeRender");
             if (folder.exists() && folder.isDirectory()) {
                 barcode.renderBarcode("BarcodeRender/" + name + ".png");
+                Desktop.getDesktop().open(new File("BarcodeRender"));
             } else {
                 // Create the folder if it does not exist
                 if (!folder.exists()) {
@@ -176,11 +177,11 @@ public class main extends javax.swing.JFrame {
                     if (created) {
                         System.out.println("Folder " + folder + " created successfully!");
                         barcode.renderBarcode("BarcodeRender/" + name + ".png");
+                        Desktop.getDesktop().open(new File("BarcodeRender"));
                     } else {
                         System.err.println("Failed to create folder " + folder);
                     }
                 }
-                Desktop.getDesktop().open(new File("BarcodeRender"));
             }
 
         } catch (Exception e) {
